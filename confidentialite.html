@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité | SERGE BUSINESS</title>
+<meta name="description" content="Politique de confidentialité et protection des données personnelles chez SERGE BUSINESS, Kinshasa, RDC.">
+<style>
+  :root {
+    --canvas-night: #000000; --canvas-night-elevated: #0a0a0a; --surface-elevated-dark: #1e2c31;
+    --canvas-light: #ffffff; --canvas-cream: #fbfbf5; --hairline-light: #e4e4e7; --hairline-dark: #1e2c31;
+    --shade-30: #d4d4d8; --shade-40: #a1a1aa; --shade-50: #71717a; --shade-60: #52525b; --shade-70: #3f3f46;
+    --ink: #000000; --on-primary: #ffffff; --link-cool-1: #9dabad; --link-cool-2: #9797a2; --link-cool-3: #bdbdca; --link-mint: #99b3ad;
+    --aloe-10: #c1fbd4; --pistachio-10: #d4f9e0; --accent-green: #4ade80;
+    --xxs: 2px; --xs: 4px; --sm: 8px; --md: 12px; --lg: 16px; --xl: 24px; --xxl: 32px; --huge: 64px;
+    --rounded-xs: 4px; --rounded-sm: 5px; --rounded-md: 8px; --rounded-lg: 12px; --rounded-xl: 20px; --rounded-pill: 9999px;
+    --font-display: 'Inter', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+  body { font-family: var(--font-ui); font-weight: 420; font-size: 16px; line-height: 1.5; background: var(--canvas-night); color: var(--on-primary); -webkit-font-smoothing: antialiased; font-feature-settings: "ss03"; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
+  .display-xxl { font-family: var(--font-display); font-size: 96px; font-weight: 300; line-height: 1.0; letter-spacing: 2.4px; }
+  .display-xl { font-family: var(--font-display); font-size: 70px; font-weight: 300; line-height: 1.0; letter-spacing: 0; }
+  .display-lg { font-family: var(--font-display); font-size: 55px; font-weight: 300; line-height: 1.16; }
+  .display-md { font-family: var(--font-display); font-size: 48px; font-weight: 300; line-height: 1.14; }
+  .heading-xl { font-family: var(--font-display); font-size: 28px; font-weight: 500; line-height: 1.28; letter-spacing: 0.42px; }
+  .heading-lg { font-family: var(--font-display); font-size: 24px; font-weight: 400; line-height: 1.14; letter-spacing: 0.36px; }
+  .heading-md { font-family: var(--font-display); font-size: 20px; font-weight: 500; line-height: 1.4; letter-spacing: 0.3px; }
+  .body-lg { font-family: var(--font-ui); font-size: 18px; font-weight: 550; line-height: 1.56; }
+  .body-md { font-family: var(--font-ui); font-size: 16px; font-weight: 420; line-height: 1.5; }
+  .caption { font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1.49; letter-spacing: 0.28px; }
+  .micro { font-family: var(--font-ui); font-size: 13px; font-weight: 500; line-height: 1.5; letter-spacing: -0.13px; }
+  .eyebrow-cap { font-family: var(--font-ui); font-size: 12px; font-weight: 400; line-height: 1.2; letter-spacing: 0.72px; text-transform: uppercase; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--lg) var(--xl); background: var(--canvas-night); border-bottom: 1px solid var(--hairline-dark); }
+  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 2px; }
+  .nav-links { display: flex; gap: var(--xl); }
+  .nav-links a { font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); transition: color 0.3s; }
+  .nav-links a:hover { color: var(--on-primary); }
+  .nav-actions { display: flex; gap: var(--sm); align-items: center; }
+  .nav-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .btn { display: inline-flex; align-items: center; gap: var(--sm); padding: var(--md) var(--xl); border-radius: var(--rounded-pill); font-family: var(--font-ui); font-size: 16px; font-weight: 420; line-height: 1.5; cursor: pointer; transition: all 0.25s ease; border: none; white-space: nowrap; }
+  .btn-outline-on-dark { background: transparent; border: 2px solid var(--on-primary); color: var(--on-primary); }
+  .btn-outline-on-dark:hover { background: var(--on-primary); color: var(--ink); }
+  .btn-outline-on-dark--subtle { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: var(--on-primary); }
+  .btn-outline-on-dark--subtle:hover { border-color: var(--on-primary); background: rgba(255,255,255,0.05); }
+  .btn-primary-pill { background: var(--ink); color: var(--on-primary); }
+  .btn-primary-pill:hover { background: var(--shade-70); }
+  .btn-aloe-pill { background: var(--aloe-10); color: var(--ink); }
+  .btn-aloe-pill:hover { filter: brightness(0.95); }
+
+  .nav-dropdown { position: relative; }
+  .dropdown-toggle { font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 4px; }
+  .dropdown-toggle:hover { color: var(--on-primary); }
+  .dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-md); padding: var(--sm) 0; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; z-index: 200; }
+  .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu a { display: block; padding: var(--sm) var(--lg); font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); text-decoration: none; transition: all 0.2s; }
+  .dropdown-menu a:hover { color: var(--on-primary); background: rgba(255,255,255,0.05); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--on-primary); transition: 0.3s; }
+
+  .floating-wa { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 56px; height: 56px; border-radius: var(--rounded-pill); background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); transition: transform 0.3s, box-shadow 0.3s; }
+  .floating-wa:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
+  .floating-wa svg { width: 28px; height: 28px; fill: white; }
+
+  .section { padding: 128px var(--xl); }
+  .section-inner { max-width: 840px; margin: 0 auto; }
+  .legal-content h1 { font-family: var(--font-display); font-size: 48px; font-weight: 300; margin-bottom: var(--xxl); }
+  .legal-content h2 { font-family: var(--font-display); font-size: 24px; font-weight: 500; margin-top: var(--xxl); margin-bottom: var(--lg); color: var(--accent-green); }
+  .legal-content p, .legal-content ul { font-size: 16px; color: var(--shade-40); line-height: 1.8; margin-bottom: var(--lg); }
+  .legal-content ul { padding-left: var(--xl); }
+  .legal-content li { margin-bottom: var(--sm); }
+
+  footer { border-top: 1px solid var(--hairline-dark); padding: var(--huge) var(--xl) var(--xl); background: var(--canvas-night); }
+  .footer-inner { max-width: 1440px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: var(--xxl); margin-bottom: var(--huge); }
+  .footer-col h4 { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 0.72px; margin-bottom: var(--xl); color: var(--on-primary); }
+  .footer-col p { font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); line-height: 1.7; }
+  .footer-col a { font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); line-height: 2; display: block; transition: color 0.3s; }
+  .footer-col a:hover { color: var(--on-primary); }
+  .footer-brand p { margin-top: var(--md); }
+  .social-icons { display: flex; gap: var(--sm); margin-top: var(--xl); }
+  .social-icons a { width: 40px; height: 40px; border-radius: var(--rounded-pill); border: 1px solid var(--hairline-dark); display: flex; align-items: center; justify-content: center; transition: all 0.3s; background: var(--canvas-night-elevated); }
+  .social-icons a:hover { border-color: var(--on-primary); background: var(--on-primary); }
+  .social-icons a:hover svg { stroke: var(--ink); }
+  .social-icons svg { width: 16px; height: 16px; stroke: var(--on-primary); fill: none; stroke-width: 1.5; }
+  .contact-item { display: flex; align-items: center; gap: var(--sm); margin-bottom: var(--md); font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); }
+  .contact-item svg { width: 16px; height: 16px; stroke: var(--link-cool-3); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--xl); border-top: 1px solid var(--shade-30); flex-wrap: wrap; gap: var(--md); }
+  .footer-bottom p { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); letter-spacing: -0.13px; }
+  .footer-bottom-links { display: flex; gap: var(--xl); }
+  .footer-bottom-links a { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); transition: color 0.3s; letter-spacing: -0.13px; }
+  .footer-bottom-links a:hover { color: var(--on-primary); }
+
+  @media (max-width: 768px) {
+    .section { padding: 80px var(--lg); } nav { padding: var(--md) var(--lg); }
+    .nav-links { display: none; }
+    .nav-toggle:checked ~ .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--canvas-night); padding: var(--xl); border-bottom: 1px solid var(--hairline-dark); gap: var(--lg); }
+    .nav-dropdown { position: static; }
+    .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; background: transparent; border: none; padding: 0; margin-top: var(--sm); margin-left: var(--lg); }
+    .dropdown-menu a { padding: var(--sm) 0; color: var(--shade-40); }
+    .hamburger { display: flex; }
+    .nav-toggle:checked ~ .nav-actions .hamburger span:first-child { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle:checked ~ .nav-actions .hamburger span:nth-child(2) { opacity: 0; }
+    .nav-toggle:checked ~ .nav-actions .hamburger span:last-child { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-actions .btn { display: none; }
+    .legal-content h1 { font-size: 36px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    footer { padding: 64px var(--lg) var(--lg); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SERGE BUSINESS</div>
+  <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Menu">
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Accueil</a>
+    <div class="nav-dropdown">
+      <span class="dropdown-toggle">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+      <div class="dropdown-menu">
+        <a href="crypto.html">Crypto & Finance</a>
+        <a href="automobile.html">Automobile & VTS</a>
+        <a href="digital.html">Marketing & Digital</a>
+      </div>
+    </div>
+    <a href="blog.html">Blog</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn btn-outline-on-dark--subtle" href="https://wa.me/243812349329" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp
+    </a>
+    <label class="hamburger" for="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="section-inner legal-content">
+    <h1>Politique de Confidentialité</h1>
+    
+    <h2>1. Collecte des données</h2>
+    <p>Lors de votre interaction avec SERGE BUSINESS (via notre site web, nos formulaires de contact ou nos services), nous pouvons collecter les données personnelles suivantes : nom, adresse email, numéro de téléphone et toute autre information que vous choisissez de nous fournir volontairement.</p>
+
+    <h2>2. Utilisation des données</h2>
+    <p>Vos données sont utilisées exclusivement pour :</p>
+    <ul>
+      <li>Répondre à vos demandes de renseignements ou de devis.</li>
+      <li>Améliorer la qualité de nos services et de notre site web.</li>
+      <li>Vous envoyer des informations commerciales, uniquement si vous y avez consenti explicitement.</li>
+    </ul>
+
+    <h2>3. Protection et sécurité</h2>
+    <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données personnelles contre la perte, l'accès non autorisé, la modification ou la divulgation.</p>
+
+    <h2>4. Partage des données</h2>
+    <p>SERGE BUSINESS ne vend, ne loue et ne partage pas vos données personnelles avec des tiers à des fins de marketing. Vos données ne sont transmises à des prestataires de services (ex: hébergeur web) que dans la mesure strictement nécessaire à l'exécution de nos services.</p>
+
+    <h2>5. Vos droits</h2>
+    <p>Conformément à la législation en vigueur en République Démocratique du Congo, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles. Pour exercer ce droit, veuillez nous contacter à l'adresse : <a href="mailto:contact@sergebusiness.org" style="color: var(--accent-green);">contact@sergebusiness.org</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <h4>SERGE BUSINESS</h4>
+        <p>Entreprise congolaise basée à Kinshasa. Nous connectons commerce, digital et mobile money pour un quotidien plus simple et plus efficace.</p>
+        <div class="social-icons">
+          <a href="https://wa.me/243812349329" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="mailto:contact@sergebusiness.org" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="crypto.html">Crypto & Finance</a>
+        <a href="automobile.html">Automobile & VTS</a>
+        <a href="digital.html">Marketing & Digital</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="crypto.html">Crypto & Finance</a>
+        <a href="automobile.html">Automobile & VTS</a>
+        <a href="digital.html">Marketing & Digital</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +243 89 342 20 57
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          +243 81 234 93 29
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@sergebusiness.org
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Kinshasa, RDC
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© SERGE BUSINESS — Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/243812349329" target="_blank" rel="noopener" class="floating-wa" aria-label="Contactez-nous sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+</body>
+</html>

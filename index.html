@@ -535,6 +535,76 @@
     letter-spacing: -0.13px;
   }
 
+  /* ===== INSIGHTS ===== */
+  .insights-section {
+    border-top: 1px solid var(--hairline-dark);
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--xl);
+  }
+  .insight-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--hairline-dark);
+    border-radius: var(--rounded-md);
+    background: var(--canvas-night-elevated);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .insight-card:hover {
+    border-color: var(--shade-50);
+    transform: translateY(-4px);
+  }
+  .insight-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: var(--surface-elevated-dark);
+  }
+  .insight-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--xl);
+  }
+  .insight-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--xs) var(--md);
+    margin-bottom: var(--md);
+    font-size: 13px;
+    color: var(--shade-40);
+  }
+  .insight-category {
+    color: var(--accent-green);
+    font-weight: 500;
+  }
+  .insight-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: var(--md);
+  }
+  .insight-card p {
+    color: var(--shade-40);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: var(--xl);
+  }
+  .insight-link {
+    margin-top: auto;
+    color: var(--accent-green);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .insights-action {
+    margin-top: var(--xxl);
+  }
+
   /* ===== FOOTER (footer-dark) ===== */
   footer {
     border-top: 1px solid var(--hairline-dark);
@@ -686,6 +756,7 @@
     .display-lg { font-size: 48px; }
     .hero-inner { grid-template-columns: 1fr; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .insights-grid { grid-template-columns: 1fr 1fr; }
     .service-card:nth-child(3n) { border-right: 1px solid var(--hairline-dark); }
     .service-card:nth-child(2n) { border-right: none; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -727,6 +798,8 @@
     .hero { padding: 100px var(--lg) 0; }
     .hero-inner { padding-bottom: var(--xxl); }
     .services-grid { grid-template-columns: 1fr; }
+    .insights-grid { grid-template-columns: 1fr; }
+    .insight-img { height: 200px; }
     .service-card { border-right: none !important; }
     .service-card:nth-child(n+4) { border-bottom: 1px solid var(--hairline-dark); }
     .service-card:last-child { border-bottom: none; }
@@ -936,6 +1009,69 @@
           <div class="stat-label">Notre priorité</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="section insights-section" id="insights">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-header-left">
+        <span class="eyebrow-cap hero-eyebrow">Actualités &amp; conseils</span>
+        <h2 class="display-xl section-title">Derniers insights</h2>
+      </div>
+      <div class="section-header-right">
+        <p class="body-md section-subtitle">Des guides pratiques pour mieux décider en crypto, digital et services connectés à Kinshasa.</p>
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      <a href="blog-mobile-money-crypto-rdc.html" class="insight-card fade-up">
+        <img src="assets/blog-post-hero.jpg" alt="Interface de finance digitale et transaction crypto sur smartphone" class="insight-img" loading="lazy">
+        <div class="insight-content">
+          <div class="insight-meta">
+            <span class="insight-category">Crypto &amp; Finance</span>
+            <span>•</span>
+            <span>5 décembre 2025</span>
+          </div>
+          <h3>Mobile Money et crypto en RDC: ce qu'il faut verifier avant une transaction</h3>
+          <p>Une checklist locale pour eviter les erreurs de numero, de reseau, d'adresse wallet, de taux et de preuve.</p>
+          <span class="insight-link">Lire l'article</span>
+        </div>
+      </a>
+
+      <a href="blog-erreurs-crypto-debutants-rdc.html" class="insight-card fade-up fade-up-delay-1">
+        <img src="assets/blog-1.jpg" alt="Smartphone utilise pour des paiements digitaux et crypto" class="insight-img" loading="lazy">
+        <div class="insight-content">
+          <div class="insight-meta">
+            <span class="insight-category">Crypto &amp; Finance</span>
+            <span>•</span>
+            <span>24 novembre 2025</span>
+          </div>
+          <h3>Les 7 erreurs les plus frequentes des debutants en cryptomonnaies</h3>
+          <p>Un guide clair pour commencer sans se faire pieger par les faux gains, les mauvais reseaux et les faux agents.</p>
+          <span class="insight-link">Lire l'article</span>
+        </div>
+      </a>
+
+      <a href="blog-arnaques-crypto-whatsapp-telegram.html" class="insight-card fade-up fade-up-delay-2">
+        <img src="assets/blog-featured.jpg" alt="Entrepreneur a Kinshasa verifiant une transaction sur son telephone" class="insight-img" loading="lazy">
+        <div class="insight-content">
+          <div class="insight-meta">
+            <span class="insight-category">Crypto &amp; Finance</span>
+            <span>•</span>
+            <span>13 novembre 2025</span>
+          </div>
+          <h3>Comment reconnaitre une fausse opportunite crypto sur WhatsApp ou Telegram</h3>
+          <p>Les signaux d'alerte a connaitre avant de croire aux promesses de rendement et aux groupes non verifies.</p>
+          <span class="insight-link">Lire l'article</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="insights-action">
+      <a class="btn btn-outline-on-dark--subtle" href="blog.html">Voir tous les articles</a>
     </div>
   </div>
 </section>

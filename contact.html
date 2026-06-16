@@ -100,6 +100,10 @@
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-green); }
   .form-group textarea { min-height: 120px; resize: vertical; }
 
+  .form-message { margin-top: var(--lg); padding: var(--lg); border-radius: var(--rounded-md); font-size: 15px; line-height: 1.6; display: none; }
+  .form-message.success { background: rgba(74, 222, 128, 0.1); border: 1px solid var(--accent-green); color: var(--accent-green); display: block; }
+  .form-message.error { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; display: block; }
+
   .contact-map { width: 100%; height: 340px; background: var(--surface-elevated-dark); border-radius: var(--rounded-lg); margin-top: var(--xxl); border: 1px solid var(--hairline-dark); object-fit: cover; }
 
   footer { border-top: 1px solid var(--hairline-dark); padding: var(--huge) var(--xl) var(--xl); background: var(--canvas-night); }
@@ -254,11 +258,50 @@
             <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre question..." required></textarea>
           </div>
           <button type="submit" class="btn btn-outline-on-dark" style="width: 100%; justify-content: center;">Envoyer le message</button>
+          <div class="form-message" id="formMessage"></div>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+document.querySelector('form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const messageDiv = document.getElementById('formMessage');
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button.textContent;
+  
+  button.textContent = 'Envoi en cours...';
+  button.disabled = true;
+  messageDiv.className = 'form-message';
+  messageDiv.textContent = '';
+  
+  try {
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (response.ok) {
+      messageDiv.className = 'form-message success';
+      messageDiv.textContent = 'Message envoyé avec succès ! Nous vous répondrons sous 24h.';
+      form.reset();
+    } else {
+      throw new Error('Erreur lors de l\'envoi');
+    }
+  } catch (error) {
+    messageDiv.className = 'form-message error';
+    messageDiv.textContent = 'Une erreur s\'est produite. Veuillez réessayer ou nous contacter directement par email.';
+  } finally {
+    button.textContent = originalText;
+    button.disabled = false;
+  }
+});
+</script>
 
 <footer>
   <div class="footer-inner">

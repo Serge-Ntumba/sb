@@ -22,6 +22,7 @@ Typography is split across three families. **Neue Haas Grotesk Display** at thin
 ### Brand & Accent
 - **Aloe** (`{colors.aloe-10}` — `#c1fbd4`): The featured-tier and "growth" accent. Used as a pill button background on light surfaces and as a feature-card fill in the pricing comparison band.
 - **Pistachio** (`{colors.pistachio-10}` — `#d4f9e0`): Softer than aloe; used as a wide section band fill on the light track to signal a different category of feature without leaving the green family.
+- **Accent Green** (`{colors.accent-green}` — `#4ade80`): SERGE BUSINESS signal green used for the quiet wordmark divider, service eyebrows, and precise focus accents on the dark site.
 - **Cool Link Tones** (`{colors.link-cool-1}` `#9dabad`, `{colors.link-cool-2}` `#9797a2`, `{colors.link-cool-3}` `#bdbdca`, `{colors.link-mint}` `#99b3ad`): Muted footer / tertiary link colors used on dark surfaces to create a quiet hierarchy below the primary white type.
 
 ### Surface
@@ -175,6 +176,23 @@ Photography is full-bleed with no border. On cinematic pages it escapes the cont
 
 **`nav-bar-dark`** — top nav on cinematic pages.
 - Background `{colors.canvas-night}`, text `{colors.on-primary}`, otherwise identical structure. Two pill buttons on the right (`button-outline-on-dark` for both, with the rightmost subtly more prominent via type weight).
+
+### Logo System
+
+**`logo-quiet-wordmark`** — primary SERGE BUSINESS lockup for dark navigation.
+- Structure: `SERGE`, a narrow vertical green signal, then `BUSINESS`.
+- Canvas: designed first for `{colors.canvas-night}` with white text.
+- Type: `{font-display}` uppercase, 14px in nav, weight 500, line-height 1, letter-spacing about 2.6px.
+- Signal: 2px wide, 18px tall, `{colors.accent-green}` / site accent green (`#4ade80`), pill radius.
+- Spacing: 10px between each word group and the green signal at default nav size.
+- Use the full wordmark in primary navigation and footer brand contexts when space allows.
+- For very tight contexts, use compact `SB` with the same green signal divider; do not introduce a separate icon style.
+
+Rules:
+- Do not use a raster screenshot of the logo in production navigation.
+- Do not add gradients, shadows, bevels, badges, or decorative frames.
+- Do not replace the green signal divider with punctuation or a typed pipe.
+- Keep the lockup white on black; on light surfaces invert to black text with the same green signal.
 
 ### Pills, Tags, and Chips
 

@@ -57,7 +57,8 @@
   .eyebrow-cap { font-family: var(--font-ui); font-size: 12px; font-weight: 400; line-height: 1.2; letter-spacing: 0.72px; text-transform: uppercase; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--lg) var(--xl); background: var(--canvas-night); border-bottom: 1px solid var(--hairline-dark); }
-  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 2px; }
+  .nav-logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 2.6px; text-transform: uppercase; white-space: nowrap; }
+  .nav-logo-signal { width: 2px; height: 18px; border-radius: var(--rounded-pill); background: var(--accent-green); flex: 0 0 auto; }
   .nav-links { display: flex; gap: var(--xl); }
   .nav-links a { font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); transition: color 0.3s; }
   .nav-links a:hover { color: var(--on-primary); }
@@ -116,8 +117,8 @@
   .service-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: var(--md); }
   .service-card p { font-size: 14px; color: var(--shade-40); line-height: 1.7; margin-bottom: var(--xl); }
   .service-card ul { list-style: none; }
-  .service-card li { font-size: 14px; color: var(--shade-30); margin-bottom: var(--sm); display: flex; align-items: center; gap: var(--sm); }
-  .service-card li::before { content: '✓'; color: var(--accent-green); font-weight: bold; }
+  .service-card li { font-size: 14px; color: var(--shade-30); margin-bottom: var(--sm); display: flex; align-items: flex-start; gap: var(--sm); }
+  .service-card li::before { content: ''; width: 6px; height: 6px; border-radius: var(--rounded-pill); background: var(--accent-green); flex: 0 0 6px; margin-top: 8px; }
 
   .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--xl); margin-top: var(--xxl); }
   .pricing-card { background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-lg); padding: var(--xxl); display: flex; flex-direction: column; transition: all 0.3s; }
@@ -127,14 +128,14 @@
   .pricing-card .price { font-family: var(--font-display); font-size: 36px; font-weight: 300; margin-bottom: var(--xl); color: var(--shade-30); }
   .pricing-card .price span { font-size: 16px; font-weight: 420; }
   .pricing-card ul { list-style: none; margin-bottom: var(--xxl); flex-grow: 1; }
-  .pricing-card li { font-size: 14px; color: var(--shade-30); margin-bottom: var(--sm); display: flex; align-items: center; gap: var(--sm); }
-  .pricing-card li::before { content: '✓'; color: var(--accent-green); font-weight: bold; }
+  .pricing-card li { font-size: 14px; color: var(--shade-30); margin-bottom: var(--sm); display: flex; align-items: flex-start; gap: var(--sm); }
+  .pricing-card li::before { content: ''; width: 6px; height: 6px; border-radius: var(--rounded-pill); background: var(--accent-green); flex: 0 0 6px; margin-top: 8px; }
   .pricing-card .btn { width: 100%; justify-content: center; }
 
   .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--xl); margin-top: var(--xxl); }
   .portfolio-item { border-radius: var(--rounded-lg); overflow: hidden; border: 1px solid var(--hairline-dark); transition: all 0.3s; }
   .portfolio-item:hover { border-color: var(--shade-50); transform: translateY(-4px); }
-  .portfolio-img { width: 100%; height: 200px; background: var(--surface-elevated-dark); display: flex; align-items: center; justify-content: center; color: var(--shade-50); font-size: 14px; }
+  .portfolio-img { width: 100%; height: 220px; background: var(--surface-elevated-dark); object-fit: cover; }
   .portfolio-content { padding: var(--xl); }
   .portfolio-content h3 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin-bottom: var(--xs); }
   .portfolio-content p { font-size: 14px; color: var(--shade-40); line-height: 1.6; }
@@ -195,7 +196,11 @@
 <body>
 
 <nav>
-  <div class="nav-logo">SERGE BUSINESS</div>
+  <a class="nav-logo" href="index.html" aria-label="SERGE BUSINESS - Accueil">
+    <span>SERGE</span>
+    <span class="nav-logo-signal" aria-hidden="true"></span>
+    <span>BUSINESS</span>
+  </a>
   <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Menu">
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
@@ -229,8 +234,8 @@
       <h1 class="display-xl hero-title">Propulsez votre marque dans l'ère digitale.</h1>
       <p class="body-md hero-desc">De la stratégie à l'exécution, nous créons des campagnes percutantes et du contenu engageant pour connecter votre entreprise à votre audience cible à Kinshasa et au-delà.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary-pill" href="contact.html">Demander un devis</a>
-        <a class="btn btn-outline-on-dark" href="#portfolio">Voir nos réalisations</a>
+        <a class="btn btn-outline-on-dark" href="contact.html">Demander un devis</a>
+        <a class="btn btn-outline-on-dark--subtle" href="#portfolio">Voir nos réalisations</a>
       </div>
     </div>
   </div>
@@ -375,21 +380,21 @@
     </div>
     <div class="portfolio-grid">
       <div class="portfolio-item">
-        <div class="portfolio-img">Image Projet 1 (800x600)</div>
+        <img src="assets/digital-project-1.jpg" alt="Projet Restaurant Le Palmier" class="portfolio-img" loading="lazy">
         <div class="portfolio-content">
           <h3>Restaurant Le Palmier</h3>
           <p>Augmentation de 150% des réservations en ligne grâce à une campagne Instagram ciblée et du contenu vidéo appetissant.</p>
         </div>
       </div>
       <div class="portfolio-item">
-        <div class="portfolio-img">Image Projet 2 (800x600)</div>
+        <img src="assets/digital-project-2.jpg" alt="Projet Tech Solutions RDC" class="portfolio-img" loading="lazy">
         <div class="portfolio-content">
           <h3>Tech Solutions RDC</h3>
           <p>Refonte complète de l'identité visuelle et stratégie SEO ayant doublé le trafic organique en 6 mois.</p>
         </div>
       </div>
       <div class="portfolio-item">
-        <div class="portfolio-img">Image Projet 3 (800x600)</div>
+        <img src="assets/digital-project-3.jpg" alt="Projet Mode Kinshasa" class="portfolio-img" loading="lazy">
         <div class="portfolio-content">
           <h3>Mode Kinshasa</h3>
           <p>Lancement d'une boutique e-commerce avec une stratégie d'influence locale générant un ROI de 400%.</p>
@@ -403,7 +408,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <h4>SERGE BUSINESS</h4>
+        <div class="nav-logo" aria-label="SERGE BUSINESS"><span>SERGE</span><span class="nav-logo-signal" aria-hidden="true"></span><span>BUSINESS</span></div>
         <p>Entreprise congolaise basée à Kinshasa. Nous connectons commerce, digital et mobile money pour un quotidien plus simple et plus efficace.</p>
         <div class="social-icons">
           <a href="https://wa.me/243812349329" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>

@@ -57,7 +57,8 @@
   .eyebrow-cap { font-family: var(--font-ui); font-size: 12px; font-weight: 400; line-height: 1.2; letter-spacing: 0.72px; text-transform: uppercase; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--lg) var(--xl); background: var(--canvas-night); border-bottom: 1px solid var(--hairline-dark); }
-  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 2px; }
+  .nav-logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 2.6px; text-transform: uppercase; white-space: nowrap; }
+  .nav-logo-signal { width: 2px; height: 18px; border-radius: var(--rounded-pill); background: var(--accent-green); flex: 0 0 auto; }
   .nav-links { display: flex; gap: var(--xl); }
   .nav-links a { font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); transition: color 0.3s; }
   .nav-links a:hover { color: var(--on-primary); }
@@ -112,12 +113,12 @@
   .listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--xl); margin-top: var(--xxl); }
   .listing-card { background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-lg); overflow: hidden; transition: all 0.3s; }
   .listing-card:hover { border-color: var(--shade-50); transform: translateY(-4px); }
-  .listing-img { width: 100%; height: 200px; background: var(--surface-elevated-dark); display: flex; align-items: center; justify-content: center; color: var(--shade-50); font-size: 14px; }
+  .listing-img { width: 100%; height: 220px; background: var(--surface-elevated-dark); object-fit: cover; }
   .listing-content { padding: var(--xl); }
   .listing-content h3 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin-bottom: var(--xs); }
   .listing-content p { font-size: 14px; color: var(--shade-40); line-height: 1.6; margin-bottom: var(--lg); }
-  .listing-specs { display: flex; gap: var(--md); margin-bottom: var(--lg); font-size: 13px; color: var(--shade-30); }
-  .listing-specs span { display: flex; align-items: center; gap: 4px; }
+  .listing-specs { display: flex; flex-wrap: wrap; gap: var(--sm); margin-bottom: var(--lg); font-size: 13px; color: var(--shade-30); }
+  .listing-specs span { display: inline-flex; align-items: center; min-height: 28px; padding: var(--xs) var(--md); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-pill); background: rgba(255,255,255,0.03); }
 
   .form-container { max-width: 600px; margin: 0 auto; background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-lg); padding: var(--xxl); }
   .form-group { margin-bottom: var(--lg); }
@@ -184,7 +185,11 @@
 <body>
 
 <nav>
-  <div class="nav-logo">SERGE BUSINESS</div>
+  <a class="nav-logo" href="index.html" aria-label="SERGE BUSINESS - Accueil">
+    <span>SERGE</span>
+    <span class="nav-logo-signal" aria-hidden="true"></span>
+    <span>BUSINESS</span>
+  </a>
   <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Menu">
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
@@ -218,8 +223,8 @@
       <h1 class="display-xl hero-title">Tech Automobile & Services de Transport (VTS).</h1>
       <p class="body-md hero-desc">De la maintenance préventive à la gestion de flotte, nous offrons des solutions automobiles complètes et fiables pour les particuliers et les entreprises à Kinshasa.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary-pill" href="#quote">Demander un devis</a>
-        <a class="btn btn-outline-on-dark" href="#services">Nos services</a>
+        <a class="btn btn-outline-on-dark" href="#quote">Demander un devis</a>
+        <a class="btn btn-outline-on-dark--subtle" href="#services">Nos services</a>
       </div>
     </div>
   </div>
@@ -260,38 +265,38 @@
     </div>
     <div class="listings-grid">
       <div class="listing-card">
-        <div class="listing-img">Image Véhicule 1 (800x600)</div>
+        <img src="assets/auto-vehicle-1.jpg" alt="Toyota Land Cruiser 2020" class="listing-img" loading="lazy">
         <div class="listing-content">
           <h3>Toyota Land Cruiser 2020</h3>
           <div class="listing-specs">
-            <span>📅 2020</span>
-            <span>⛙ 45,000 km</span>
-            <span>⛽ Diesel</span>
+            <span>Année 2020</span>
+            <span>45 000 km</span>
+            <span>Diesel</span>
           </div>
           <p>Véhicule tout-terrain en excellent état, idéal pour les routes de Kinshasa. Entretien régulier effectué.</p>
           <a href="#quote" class="btn btn-outline-on-dark" style="width: 100%; justify-content: center;">Demander un devis</a>
         </div>
       </div>
       <div class="listing-card">
-        <div class="listing-img">Image Service 2 (800x600)</div>
+        <img src="assets/auto-service.jpg" alt="Service de maintenance automobile" class="listing-img" loading="lazy">
         <div class="listing-content">
           <h3>Forfait Maintenance Entreprise</h3>
           <div class="listing-specs">
-            <span>🔧 Complet</span>
-            <span>📅 Mensuel</span>
+            <span>Service complet</span>
+            <span>Suivi mensuel</span>
           </div>
           <p>Contrat de maintenance préventive pour flottes d'entreprise. Inclut 2 visites par mois et priorité sur les réparations.</p>
           <a href="#quote" class="btn btn-outline-on-dark" style="width: 100%; justify-content: center;">Demander un devis</a>
         </div>
       </div>
       <div class="listing-card">
-        <div class="listing-img">Image Véhicule 3 (800x600)</div>
+        <img src="assets/auto-vehicle-2.jpg" alt="Hyundai Tucson 2021" class="listing-img" loading="lazy">
         <div class="listing-content">
           <h3>Hyundai Tucson 2021</h3>
           <div class="listing-specs">
-            <span>📅 2021</span>
-            <span>⛙ 30,000 km</span>
-            <span>⛽ Essence</span>
+            <span>Année 2021</span>
+            <span>30 000 km</span>
+            <span>Essence</span>
           </div>
           <p>SUV confortable et économique, parfait pour un usage urbain et familial. Toutes options.</p>
           <a href="#quote" class="btn btn-outline-on-dark" style="width: 100%; justify-content: center;">Demander un devis</a>
@@ -310,7 +315,11 @@
       </div>
     </div>
     <div class="form-container">
-      <form action="#" method="POST">
+      <form action="https://formsubmit.co/contact@sergebusiness.org" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis automobile">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none">
         <div class="form-group">
           <label for="name">Nom complet</label>
           <input type="text" id="name" name="name" required>
@@ -337,7 +346,7 @@
           <label for="message">Message détaillé</label>
           <textarea id="message" name="message" placeholder="Décrivez votre besoin ou le véhicule qui vous intéresse..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary-pill" style="width: 100%; justify-content: center;">Envoyer la demande</button>
+        <button type="submit" class="btn btn-outline-on-dark" style="width: 100%; justify-content: center;">Envoyer la demande</button>
       </form>
     </div>
   </div>
@@ -347,7 +356,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <h4>SERGE BUSINESS</h4>
+        <div class="nav-logo" aria-label="SERGE BUSINESS"><span>SERGE</span><span class="nav-logo-signal" aria-hidden="true"></span><span>BUSINESS</span></div>
         <p>Entreprise congolaise basée à Kinshasa. Nous connectons commerce, digital et mobile money pour un quotidien plus simple et plus efficace.</p>
         <div class="social-icons">
           <a href="https://wa.me/243812349329" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>

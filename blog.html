@@ -35,7 +35,8 @@
   .eyebrow-cap { font-family: var(--font-ui); font-size: 12px; font-weight: 400; line-height: 1.2; letter-spacing: 0.72px; text-transform: uppercase; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: var(--lg) var(--xl); background: var(--canvas-night); border-bottom: 1px solid var(--hairline-dark); }
-  .nav-logo { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 2px; }
+  .nav-logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 2.6px; text-transform: uppercase; white-space: nowrap; }
+  .nav-logo-signal { width: 2px; height: 18px; border-radius: var(--rounded-pill); background: var(--accent-green); flex: 0 0 auto; }
   .nav-links { display: flex; gap: var(--xl); }
   .nav-links a { font-family: var(--font-ui); font-size: 14px; font-weight: 420; color: var(--shade-40); transition: color 0.3s; }
   .nav-links a:hover { color: var(--on-primary); }
@@ -80,21 +81,21 @@
   .hero-title { margin-bottom: var(--xl); }
 
   .featured-post { background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-lg); overflow: hidden; display: grid; grid-template-columns: 1.5fr 1fr; margin-bottom: var(--huge); }
-  .featured-img { width: 100%; height: 100%; min-height: 400px; background: var(--surface-elevated-dark); display: flex; align-items: center; justify-content: center; color: var(--shade-50); font-size: 14px; }
+  .featured-img { width: 100%; height: 100%; min-height: 420px; background: var(--surface-elevated-dark); object-fit: cover; }
   .featured-content { padding: var(--xxl); display: flex; flex-direction: column; justify-content: center; }
-  .post-meta { display: flex; gap: var(--md); margin-bottom: var(--md); font-size: 13px; color: var(--shade-40); }
+  .post-meta { display: flex; flex-wrap: wrap; gap: var(--xs) var(--md); margin-bottom: var(--md); font-size: 13px; color: var(--shade-40); }
   .post-category { color: var(--accent-green); font-weight: 500; }
   .featured-content h2 { font-family: var(--font-display); font-size: 32px; font-weight: 500; margin-bottom: var(--lg); line-height: 1.2; }
   .featured-content p { color: var(--shade-40); line-height: 1.7; margin-bottom: var(--xl); }
 
   .category-pills { display: flex; gap: var(--sm); margin-bottom: var(--xxl); flex-wrap: wrap; }
-  .pill { padding: var(--xs) var(--lg); border-radius: var(--rounded-pill); border: 1px solid var(--hairline-dark); font-size: 14px; font-weight: 500; color: var(--shade-40); transition: all 0.3s; cursor: pointer; }
+  .pill { appearance: none; background: transparent; font-family: var(--font-ui); padding: var(--xs) var(--lg); border-radius: var(--rounded-pill); border: 1px solid var(--hairline-dark); font-size: 14px; font-weight: 500; color: var(--shade-40); transition: all 0.3s; cursor: pointer; min-height: 36px; }
   .pill:hover, .pill.active { background: var(--on-primary); color: var(--ink); border-color: var(--on-primary); }
 
   .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--xl); }
   .blog-card { background: var(--canvas-night-elevated); border: 1px solid var(--hairline-dark); border-radius: var(--rounded-lg); overflow: hidden; transition: all 0.3s; }
   .blog-card:hover { border-color: var(--shade-50); transform: translateY(-4px); }
-  .blog-img { width: 100%; height: 200px; background: var(--surface-elevated-dark); display: flex; align-items: center; justify-content: center; color: var(--shade-50); font-size: 14px; }
+  .blog-img { width: 100%; height: 220px; background: var(--surface-elevated-dark); object-fit: cover; }
   .blog-content { padding: var(--xl); }
   .blog-content h3 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin-bottom: var(--sm); line-height: 1.3; }
   .blog-content p { font-size: 14px; color: var(--shade-40); line-height: 1.6; margin-bottom: var(--lg); }
@@ -159,7 +160,11 @@
 <body>
 
 <nav>
-  <div class="nav-logo">SERGE BUSINESS</div>
+  <a class="nav-logo" href="index.html" aria-label="SERGE BUSINESS - Accueil">
+    <span>SERGE</span>
+    <span class="nav-logo-signal" aria-hidden="true"></span>
+    <span>BUSINESS</span>
+  </a>
   <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Menu">
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
@@ -197,56 +202,192 @@
 
 <section class="section">
   <div class="section-inner">
-    <div class="featured-post">
-      <div class="featured-img">Image Article Vedette (800x600)</div>
+    <div class="featured-post" data-category="finance">
+      <img src="assets/blog-post-hero.jpg" alt="Interface de finance digitale et transaction crypto sur smartphone" class="featured-img" loading="lazy">
       <div class="featured-content">
         <div class="post-meta">
-          <span class="post-category">Finance Digitale</span>
+          <span class="post-category">Crypto & Finance</span>
           <span>•</span>
-          <span>15 Juin 2026</span>
+          <span>16 Juin 2026</span>
           <span>•</span>
-          <span>5 min de lecture</span>
+          <span>12 min de lecture</span>
         </div>
-        <h2>L'avenir du Mobile Money et des cryptomonnaies en RDC</h2>
-        <p>Découvrez comment les nouvelles réglementations et l'adoption croissante des technologies blockchain transforment le paysage financier congolais, offrant de nouvelles opportunités aux entrepreneurs locaux.</p>
-        <a href="blog-post.html" class="btn btn-primary-pill" style="width: fit-content;">Lire l'article</a>
+        <h2>Mobile Money et crypto en RDC: ce qu'il faut verifier avant une transaction</h2>
+        <p>Une checklist locale pour eviter les erreurs de numero, de reseau, d'adresse wallet, de taux et de preuve avant d'envoyer de l'argent ou de la crypto a Kinshasa.</p>
+        <a href="blog-mobile-money-crypto-rdc.html" class="btn btn-outline-on-dark" style="width: fit-content;">Lire l'article</a>
       </div>
     </div>
 
     <div class="category-pills">
-      <span class="pill active">Tous</span>
-      <span class="pill">Technologie</span>
-      <span class="pill">Finance</span>
-      <span class="pill">Automobile</span>
-      <span class="pill">Marketing</span>
+      <button type="button" class="pill active" data-filter="all">Tous</button>
+      <button type="button" class="pill" data-filter="finance">Crypto & Finance</button>
+      <button type="button" class="pill" data-filter="marketing">Marketing & Digital</button>
+      <button type="button" class="pill" data-filter="tech">Technologie</button>
+      <button type="button" class="pill" data-filter="auto">Automobile & VTS</button>
+      <button type="button" class="pill" data-filter="conseil">Conseils</button>
     </div>
 
     <div class="blog-grid">
-      <a href="blog-post.html" class="blog-card">
-        <div class="blog-img">Image Article 1</div>
+      <a href="blog-erreurs-crypto-debutants-rdc.html" class="blog-card" data-category="finance">
+        <img src="assets/blog-1.jpg" alt="Smartphone utilise pour des paiements digitaux et crypto" class="blog-img" loading="lazy">
         <div class="blog-content">
-          <div class="post-meta"><span class="post-category">Tech</span><span>•</span><span>10 Juin 2026</span></div>
-          <h3>5 outils digitaux indispensables pour votre entreprise à Kinshasa</h3>
-          <p>Optimisez votre productivité avec ces solutions simples et accessibles.</p>
-          <span class="read-more">Lire la suite →</span>
+          <div class="post-meta"><span class="post-category">Crypto & Finance</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Les 7 erreurs les plus frequentes des debutants en cryptomonnaies</h3>
+          <p>Un guide clair pour commencer sans se faire pieger par les faux gains, les mauvais reseaux, les wallets mal proteges et les faux agents.</p>
+          <span class="read-more">Lire la suite</span>
         </div>
       </a>
-      <a href="blog-post.html" class="blog-card">
-        <div class="blog-img">Image Article 2</div>
+      <a href="blog-arnaques-crypto-whatsapp-telegram.html" class="blog-card" data-category="finance">
+        <img src="assets/blog-featured.jpg" alt="Entrepreneur a Kinshasa verifiant une transaction sur son telephone" class="blog-img" loading="lazy">
         <div class="blog-content">
-          <div class="post-meta"><span class="post-category">Auto</span><span>•</span><span>5 Juin 2026</span></div>
-          <h3>Comment bien entretenir son véhicule en saison des pluies</h3>
-          <p>Conseils pratiques pour protéger votre moteur et votre carrosserie.</p>
-          <span class="read-more">Lire la suite →</span>
+          <div class="post-meta"><span class="post-category">Crypto & Finance</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Comment reconnaitre une fausse opportunite crypto sur WhatsApp ou Telegram</h3>
+          <p>Les signaux d'alerte a connaitre avant de croire aux promesses de rendement, aux faux groupes, aux screenshots truques et aux agents non verifies.</p>
+          <span class="read-more">Lire la suite</span>
         </div>
       </a>
-      <a href="blog-post.html" class="blog-card">
-        <div class="blog-img">Image Article 3</div>
+      <a href="blog-wallet-personnel-plateforme-crypto.html" class="blog-card" data-category="finance">
+        <img src="assets/hero-smartphone-kinshasa.png" alt="Smartphone a Kinshasa utilise pour gerer un wallet crypto" class="blog-img" loading="lazy">
         <div class="blog-content">
-          <div class="post-meta"><span class="post-category">Marketing</span><span>•</span><span>1 Juin 2026</span></div>
-          <h3>Les tendances du marketing digital en Afrique pour 2026</h3>
-          <p>Ce que les marques doivent savoir pour rester compétitives.</p>
-          <span class="read-more">Lire la suite →</span>
+          <div class="post-meta"><span class="post-category">Crypto & Finance</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Wallet personnel ou plateforme: ou garder ses cryptomonnaies ?</h3>
+          <p>Comprendre quand garder ses cryptomonnaies sur une plateforme, quand utiliser un wallet personnel, et comment proteger ses acces sans improviser.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-stablecoins-usdt-entrepreneurs-rdc.html" class="blog-card" data-category="finance">
+        <img src="assets/kinshasa-market-projects.png" alt="Entrepreneurs et commerce local a Kinshasa utilisant des outils digitaux" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Crypto & Finance</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Stablecoins en RDC: a quoi sert l'USDT pour les entrepreneurs ?</h3>
+          <p>A quoi sert l'USDT pour payer, recevoir ou conserver une valeur numerique, avec les precautions utiles pour les entrepreneurs congolais.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-checklist-securite-crypto-rdc.html" class="blog-card" data-category="finance">
+        <img src="assets/kinshasa-night-banner.png" alt="Kinshasa de nuit et activite digitale locale" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Crypto & Finance</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Notre checklist de securite avant chaque operation crypto</h3>
+          <p>Une methode simple avant chaque operation crypto: verifier l'identite, le montant, le taux, le reseau, l'adresse, les frais et la preuve.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-presence-digitale-kinshasa.html" class="blog-card" data-category="marketing">
+        <img src="assets/digital-project-1.jpg" alt="Presence digitale professionnelle pour une entreprise locale a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Marketing & Digital</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Pourquoi une entreprise a Kinshasa a besoin d'une presence digitale claire</h3>
+          <p>Pourquoi une presence digitale claire aide les entreprises de Kinshasa a rassurer, expliquer leurs services et transformer les recommandations en contacts serieux.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-canaux-digitaux-rdc.html" class="blog-card" data-category="marketing">
+        <img src="assets/digital-project-2.jpg" alt="Canaux digitaux utilises par une entreprise locale: site web, reseaux sociaux et WhatsApp" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Marketing & Digital</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Site web, Facebook, TikTok ou WhatsApp Business: quel canal choisir ?</h3>
+          <p>Comment choisir entre site web, Facebook, TikTok et WhatsApp Business selon votre objectif, votre client et votre parcours de vente.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-preuves-marque-locale-en-ligne.html" class="blog-card" data-category="marketing">
+        <img src="assets/digital-project-3.jpg" alt="Equipe marketing organisant les preuves de confiance d une marque locale" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Marketing & Digital</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Les 5 preuves qu'une marque locale doit montrer en ligne</h3>
+          <p>Les preuves visibles qui rassurent un client local: contacts clairs, photos reelles, realisations, temoignages et processus simple.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-mesurer-campagne-digitale-rdc.html" class="blog-card" data-category="marketing">
+        <img src="assets/blog-3.jpg" alt="Equipe marketing analysant les resultats d une campagne digitale" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Marketing & Digital</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Mesurer une campagne digitale: appels, messages, ventes, pas seulement les likes</h3>
+          <p>Pourquoi les likes ne suffisent pas: mesurer appels, messages WhatsApp, demandes de devis, ventes et cout par client.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-ecommerce-rdc-rassurer-client-paiement.html" class="blog-card" data-category="marketing">
+        <img src="assets/kinshasa-market-projects.png" alt="Commerce local a Kinshasa organise pour rassurer les clients avant paiement" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Marketing & Digital</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>E-commerce en RDC: comment rassurer un client avant le paiement</h3>
+          <p>Les preuves et procedures qui rassurent un client avant paiement: prix clairs, contacts officiels, livraison, retours et confirmations.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-vpn-entreprises-rdc.html" class="blog-card" data-category="tech">
+        <img src="assets/digital-project-1.jpg" alt="Entreprise locale securisant ses acces internet et ses outils digitaux" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Technologie</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>VPN pour entreprises: usages utiles, limites et bonnes pratiques</h3>
+          <p>Usages utiles, limites et bonnes pratiques du VPN pour proteger les acces, les donnees et le travail a distance.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-importer-vehicule-rdc-couts.html" class="blog-card" data-category="auto">
+        <img src="assets/auto-vehicle-1.jpg" alt="Vehicule importe inspecte avant achat et livraison en RDC" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Automobile & VTS</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Importer un vehicule: comprendre les couts visibles et caches</h3>
+          <p>Les couts visibles et caches a anticiper avant d'importer un vehicule: achat, transport, documents, douane, remise en etat et risques.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-diagnostic-automobile-avant-achat.html" class="blog-card" data-category="auto">
+        <img src="assets/auto-service.jpg" alt="Diagnostic automobile avant achat dans un atelier a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Automobile & VTS</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Diagnostic automobile: pourquoi scanner une voiture avant l'achat</h3>
+          <p>Pourquoi scanner une voiture avant achat aide a verifier moteur, boite, electronique, historique d erreurs et couts probables.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-entretien-vehicule-saison-pluies-kinshasa.html" class="blog-card" data-category="auto">
+        <img src="assets/auto-vehicle-2.jpg" alt="Vehicule prepare pour la saison des pluies a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Automobile & VTS</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Entretenir son vehicule pendant la saison des pluies: checklist pratique</h3>
+          <p>Une checklist concrete pour pneus, freins, essuie-glaces, batterie, feux et conduite prudente pendant les pluies a Kinshasa.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-vts-entreprises-prestataire-fiable.html" class="blog-card" data-category="auto">
+        <img src="assets/auto-vehicle-1.jpg" alt="Service VTS professionnel pour entreprise a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Automobile & VTS</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>VTS pour entreprises: comment choisir un prestataire fiable</h3>
+          <p>Les criteres a verifier avant de confier vos deplacements: vehicules, chauffeurs, assurance, ponctualite, suivi et prix clair.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-pieces-detachees-auto-kinshasa.html" class="blog-card" data-category="auto">
+        <img src="assets/auto-service.jpg" alt="Pieces detachees et intervention automobile dans un atelier a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Automobile & VTS</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Pieces detachees: original, occasion ou contrefacon, comment decider</h3>
+          <p>Comment choisir une piece selon la securite, l'usage du vehicule, le budget, la disponibilite et les risques de panne.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-choisir-prestataire-fiable-kinshasa.html" class="blog-card" data-category="conseil">
+        <img src="assets/about-team.jpg" alt="Equipe locale evaluant un prestataire fiable a Kinshasa" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Conseils</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Comment choisir un prestataire fiable en crypto, digital ou automobile</h3>
+          <p>Une methode simple pour verifier identite, preuves, prix, risques, limites, communication et suivi avant de confier une mission.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="blog-partenaire-local-kinshasa.html" class="blog-card" data-category="conseil">
+        <img src="assets/contact-map-kinshasa.jpg" alt="Carte et contexte local de Kinshasa pour choisir un partenaire de confiance" class="blog-img" loading="lazy">
+        <div class="blog-content">
+          <div class="post-meta"><span class="post-category">Conseils</span><span>•</span><span>16 Juin 2026</span></div>
+          <h3>Pourquoi travailler avec un partenaire local base a Kinshasa</h3>
+          <p>Pourquoi la connaissance du terrain aide a adapter digital, crypto, automobile, paiements, livraison et relation client aux realites locales.</p>
+          <span class="read-more">Lire la suite</span>
         </div>
       </a>
     </div>
@@ -254,8 +395,12 @@
     <div class="newsletter">
       <h2>Restez informé</h2>
       <p>Recevez nos derniers articles et conseils directement dans votre boîte mail. Pas de spam, promis.</p>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
-        <input type="email" placeholder="Votre adresse email" required>
+      <form class="newsletter-form" action="https://formsubmit.co/contact@sergebusiness.org" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle inscription newsletter">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none">
+        <input type="email" name="email" placeholder="Votre adresse email" required>
         <button type="submit" class="btn btn-aloe-pill">S'inscrire</button>
       </form>
     </div>
@@ -266,7 +411,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <h4>SERGE BUSINESS</h4>
+        <div class="nav-logo" aria-label="SERGE BUSINESS"><span>SERGE</span><span class="nav-logo-signal" aria-hidden="true"></span><span>BUSINESS</span></div>
         <p>Entreprise congolaise basée à Kinshasa. Nous connectons commerce, digital et mobile money pour un quotidien plus simple et plus efficace.</p>
         <div class="social-icons">
           <a href="https://wa.me/243812349329" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
@@ -323,6 +468,21 @@
 <a href="https://wa.me/243812349329" target="_blank" rel="noopener" class="floating-wa" aria-label="Contactez-nous sur WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
+
+<script>
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  const filterablePosts = document.querySelectorAll('[data-category]');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => item.classList.toggle('active', item === button));
+      filterablePosts.forEach((post) => {
+        post.hidden = filter !== 'all' && post.dataset.category !== filter;
+      });
+    });
+  });
+</script>
 
 </body>
 </html>

@@ -4,7 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SERGE BUSINESS à Kinshasa connecte commerce, digital, Mobile Money, VPN, hébergement web, boutique en ligne et solutions VTS avec un accompagnement local.">
+<link rel="canonical" href="https://sergebusiness.org/">
 <title>SERGE BUSINESS — Commerce, digital et mobile money connectés</title>
+<script>
+  (function () {
+    var path = window.location.pathname;
+    if (path.endsWith('/index.html')) {
+      try {
+        window.history.replaceState(null, '', path.slice(0, -10) + window.location.search + window.location.hash);
+      } catch (error) {}
+    }
+  })();
+</script>
 <style>
   /* ===== SHOPIFI DESIGN SYSTEM TOKENS ===== */
   :root {
@@ -908,14 +919,14 @@
 
 <!-- NAV (nav-bar-dark) -->
 <nav>
-  <a class="nav-logo" href="index.html" aria-label="SERGE BUSINESS - Accueil">
+  <a class="nav-logo" href="./" aria-label="SERGE BUSINESS - Accueil">
     <span>SERGE</span>
     <span class="nav-logo-signal" aria-hidden="true"></span>
     <span>BUSINESS</span>
   </a>
   <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Menu">
   <div class="nav-links" id="navLinks">
-    <a href="index.html">Accueil</a>
+    <a href="./">Accueil</a>
     <div class="nav-dropdown">
       <span class="dropdown-toggle">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
       <div class="dropdown-menu">
@@ -1197,8 +1208,8 @@
       </div>
       <div class="footer-col">
         <h4>Liens rapides</h4>
-        <a href="index.html">Accueil</a>
-        <a href="index.html#services">Services</a>
+        <a href="./">Accueil</a>
+        <a href="./#services">Services</a>
         <a href="projets.html">Projets</a>
         <a href="blog.html">Blog</a>
         <a href="apropos.html">À propos</a>

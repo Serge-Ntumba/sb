@@ -267,3 +267,6 @@ Photography uses responsive `srcset` with art-direction crops at major breakpoin
 5. Default body to `{typography.body-md}`; reserve `{typography.body-lg}` for marketing leads.
 6. Keep the two canvas tracks separated — when designing a new page, choose cinematic OR transactional, not both.
 7. The pill shape is non-negotiable; new button variants vary in fill / border / canvas, never in shape.
+
+
+

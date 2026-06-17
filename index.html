@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SERGE BUSINESS à Kinshasa connecte commerce, digital, Mobile Money, VPN, hébergement web, boutique en ligne et solutions VTS avec un accompagnement local.">
 <title>SERGE BUSINESS — Commerce, digital et mobile money connectés</title>
 <style>
   /* ===== SHOPIFI DESIGN SYSTEM TOKENS ===== */
@@ -168,7 +169,7 @@
     font-size: 13px;
     font-weight: 500;
     line-height: 1.5;
-    letter-spacing: -0.13px;
+    letter-spacing: 0;
   }
   .eyebrow-cap {
     font-family: var(--font-ui);
@@ -391,11 +392,14 @@
     border-top: 1px solid var(--hairline-dark);
   }
   .service-card {
+    display: block;
     padding: var(--xxl);
     border-bottom: 1px solid var(--hairline-dark);
     border-right: 1px solid var(--hairline-dark);
     background: var(--canvas-night);
-    transition: background 0.3s;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s;
     cursor: pointer;
     position: relative;
   }
@@ -410,6 +414,11 @@
   }
   .service-card:hover {
     background: var(--canvas-night-elevated);
+    transform: translateY(-2px);
+  }
+  .service-card:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: -2px;
   }
   .service-card:hover::before { opacity: 1; }
   .service-card:nth-child(3n) { border-right: none; }
@@ -422,8 +431,22 @@
     margin-bottom: var(--xl);
     background: var(--canvas-night-elevated);
     box-shadow: 0 1px 2px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
   }
-  .service-icon svg { width: 22px; height: 22px; stroke: var(--on-primary); fill: none; stroke-width: 1.5; }
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--on-primary);
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke 0.3s;
+  }
+  .service-card:hover .service-icon {
+    border-color: rgba(74,222,128,0.55);
+    background: rgba(74,222,128,0.08);
+    transform: translateY(-2px);
+  }
+  .service-card:hover .service-icon svg { stroke: var(--accent-green); }
   .service-card h3 {
     font-family: var(--font-display);
     font-size: 20px;
@@ -480,7 +503,19 @@
   .projects-icons {
     display: flex; gap: var(--xxl); flex-wrap: wrap;
   }
-  .project-item { text-align: center; min-width: 120px; }
+  .project-item {
+    text-align: center;
+    min-width: 120px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+  }
+  .project-item:hover { transform: translateY(-4px); }
+  .project-item:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 8px;
+    border-radius: var(--rounded-md);
+  }
   .project-item .p-icon {
     width: 64px; height: 64px; margin: 0 auto var(--md);
     border: 1px solid var(--hairline-dark);
@@ -488,29 +523,47 @@
     display: flex; align-items: center; justify-content: center;
     background: var(--canvas-night-elevated);
     box-shadow: 0 1px 2px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: border-color 0.25s ease, background 0.25s ease;
   }
-  .project-item .p-icon svg { width: 26px; height: 26px; stroke: var(--on-primary); fill: none; stroke-width: 1.5; }
+  .project-item .p-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--on-primary);
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke 0.25s ease;
+  }
+  .project-item:hover .p-icon {
+    border-color: rgba(74,222,128,0.55);
+    background: rgba(74,222,128,0.08);
+  }
+  .project-item:hover .p-icon svg { stroke: var(--accent-green); }
+  .project-item:hover h4 { color: var(--accent-green); }
   .project-item h4 {
     font-family: var(--font-display);
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 4px;
+    transition: color 0.25s ease;
   }
   .project-item p { font-size: 13px; color: var(--shade-50); }
 
   /* ===== WHY CHOOSE ===== */
   .why-section {
     border-top: 1px solid var(--hairline-dark);
+    padding-top: 104px;
+    padding-bottom: 96px;
   }
   .why-grid {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    flex-wrap: wrap; gap: var(--xxl);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: clamp(40px, 6vw, 96px);
   }
   .why-left { max-width: 440px; }
   .why-left .section-title { margin-bottom: var(--lg); }
   .why-left p { color: var(--shade-40); line-height: 1.7; }
   .stats {
-    display: flex; gap: 0; flex-wrap: wrap;
+    display: flex; gap: 0; flex: 1 1 640px; flex-wrap: wrap;
+    justify-content: flex-end;
   }
   .stat {
     padding: 0 var(--xxl);
@@ -525,14 +578,17 @@
     font-weight: 300;
     line-height: 1.0;
     margin-bottom: var(--sm);
-    letter-spacing: -1px;
+    letter-spacing: 0;
+  }
+  .stat-number--word {
+    font-size: 42px;
   }
   .stat-label {
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 500;
     color: var(--shade-50);
-    letter-spacing: -0.13px;
+    letter-spacing: 0;
   }
 
   /* ===== INSIGHTS ===== */
@@ -617,8 +673,9 @@
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    grid-template-columns: 1.45fr 0.85fr 1fr 1.15fr 1.35fr;
     gap: var(--xxl);
+    align-items: start;
     margin-bottom: var(--huge);
   }
   .footer-col h4 {
@@ -672,9 +729,22 @@
     font-weight: 500;
     color: var(--link-cool-2);
   }
-  .contact-item svg { width: 16px; height: 16px; stroke: var(--link-cool-3); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+  .contact-item svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--link-cool-3);
+    fill: none;
+    stroke-width: 1.5;
+    flex-shrink: 0;
+    transition: stroke 0.3s, transform 0.3s;
+  }
+  .contact-item:hover svg {
+    stroke: var(--accent-green);
+    transform: translateY(-1px);
+  }
   .contact-item a { color: var(--link-cool-2); text-decoration: none; transition: color 0.3s; }
   .contact-item a:hover { color: var(--on-primary); }
+  .contact-item:hover a { color: var(--on-primary); }
   .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
     padding-top: var(--xl);
@@ -686,7 +756,7 @@
     font-size: 13px;
     font-weight: 500;
     color: var(--shade-60);
-    letter-spacing: -0.13px;
+    letter-spacing: 0;
   }
   .footer-bottom-links { display: flex; gap: var(--xl); }
   .footer-bottom-links a {
@@ -695,7 +765,7 @@
     font-weight: 500;
     color: var(--shade-60);
     transition: color 0.3s;
-    letter-spacing: -0.13px;
+    letter-spacing: 0;
   }
   .footer-bottom-links a:hover { color: var(--on-primary); }
 
@@ -806,12 +876,31 @@
     .stat { border-left: none; border-top: 1px solid var(--hairline-dark); padding: var(--xl) 0; width: 50%; }
     .stat:first-child { border-top: none; }
     .stat-number { font-size: 40px; }
+    .stat-number--word { font-size: 32px; }
+    .stats { width: 100%; justify-content: flex-start; }
     .footer-grid { grid-template-columns: 1fr; }
     .city-banner { height: 240px; border-radius: 0; }
     .projects-inner { padding: 80px var(--lg); }
     .projects-icons { gap: var(--xl); }
     footer { padding: 64px var(--lg) var(--lg); }
     .section-header { flex-direction: column; gap: var(--lg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+    .service-card:hover,
+    .project-item:hover,
+    .service-card:hover .service-icon,
+    .contact-item:hover svg,
+    .floating-wa:hover {
+      transform: none;
+    }
   }
 </style>
 </head>
@@ -835,6 +924,7 @@
         <a href="digital.html">Marketing & Digital</a>
       </div>
     </div>
+    <a href="projets.html">Projets</a>
     <a href="blog.html">Blog</a>
     <a href="apropos.html">À propos</a>
     <a href="contact.html">Contact</a>
@@ -880,61 +970,61 @@
   <div class="section-inner">
     <div class="section-header fade-up">
       <div class="section-header-left">
-        <h2 class="display-xl section-title">Nos domaines d'activité</h2>
+        <h2 class="display-xl section-title">Nos produits &amp; services</h2>
       </div>
       <div class="section-header-right">
-        <p class="body-md section-subtitle">Des solutions concrètes et accessibles pour les particuliers, entrepreneurs et entreprises de Kinshasa.</p>
+        <p class="body-md section-subtitle">Des offres concrètes pour connecter votre présence en ligne, vos paiements, vos clients et vos opérations à Kinshasa.</p>
       </div>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3>Technologie &amp; solutions digitales</h3>
-        <p>Outils numériques, applications, accompagnement et services pour simplifier votre quotidien et votre activité.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service-card fade-up fade-up-delay-1">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-        </div>
-        <h3>Hébergement web</h3>
-        <p>Hébergement, noms de domaine et services associés pour assurer la présence et la performance de vos projets en ligne.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service-card fade-up fade-up-delay-2">
+      <a href="vpn.html" class="service-card fade-up">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>VPN</h3>
-        <p>Solutions VPN sécurisées et privées pour un accès libre et protégé à vos services et contenus.</p>
+        <p>Accès privé, plus stable et protégé pour travailler, gérer vos comptes et utiliser vos services en ligne avec plus de sérénité.</p>
         <span class="service-arrow">→</span>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </div>
-        <h3>Mobile Money</h3>
-        <p>Vente d'unités et services mobile money rapides et fiables pour rester connecté à tout moment.</p>
-        <span class="service-arrow">→</span>
-      </div>
-      <div class="service-card fade-up fade-up-delay-1">
+      </a>
+      <a href="boutique-en-ligne.html" class="service-card fade-up fade-up-delay-1">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-        <h3>E-commerce</h3>
-        <p>Boutique en ligne, gestion de offres et solutions e-commerce pour développer vos ventes et votre visibilité.</p>
+        <h3>Boutique en ligne</h3>
+        <p>Création d'une vitrine commerciale simple à gérer, avec catalogue, commandes, contacts client et présence crédible.</p>
         <span class="service-arrow">→</span>
-      </div>
-      <div class="service-card fade-up fade-up-delay-2">
+      </a>
+      <a href="panels-smm.html" class="service-card fade-up fade-up-delay-2">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M4 15s1.5-2 5-2 5 2 11 2V5c-6 0-7.5-2-11-2S4 5 4 5z"/><line x1="4" y1="22" x2="4" y2="15"/><path d="M8 22h8"/></svg>
         </div>
-        <h3>Commerce général</h3>
-        <p>Vente de produits et services de détail adaptés aux besoins des clients et des entreprises à Kinshasa.</p>
+        <h3>SMM Panels</h3>
+        <p>Outils et accompagnement pour organiser vos campagnes sociales, suivre vos actions et renforcer votre visibilité.</p>
         <span class="service-arrow">→</span>
-      </div>
+      </a>
+      <a href="hebergement-web.html" class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3>Hébergement web</h3>
+        <p>Hébergement, noms de domaine, e-mails professionnels et suivi technique pour garder vos projets disponibles.</p>
+        <span class="service-arrow">→</span>
+      </a>
+      <a href="unites-mobile-money.html" class="service-card fade-up fade-up-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Unités &amp; Mobile Money</h3>
+        <p>Vente d'unités, assistance mobile money et services de paiement pour rester connecté et gagner du temps.</p>
+        <span class="service-arrow">→</span>
+      </a>
+      <a href="application-vts.html" class="service-card fade-up fade-up-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 16H9m10 0h1a2 2 0 0 0 2-2v-3.5a2 2 0 0 0-.4-1.2L19 6a2 2 0 0 0-1.6-.8H6.6A2 2 0 0 0 5 6l-2.6 3.3A2 2 0 0 0 2 10.5V14a2 2 0 0 0 2 2h1"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg>
+        </div>
+        <h3>Application VTS</h3>
+        <p>Suivi de véhicules, gestion de flotte et visibilité opérationnelle pour les entreprises qui veulent mieux contrôler leurs déplacements.</p>
+        <span class="service-arrow">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -948,37 +1038,51 @@
     <div class="projects-left fade-up">
       <h2 class="display-xl section-title">Nos projets<br>et marques</h2>
       <p class="body-md">Nous développons plusieurs marques et services dans des secteurs clés pour mieux vous servir.</p>
-      <button class="btn btn-outline-on-dark">Découvrir nos projets</button>
+      <a class="btn btn-outline-on-dark" href="projets.html">Découvrir nos projets</a>
     </div>
     <div class="projects-icons fade-up fade-up-delay-1">
-      <div class="project-item">
+      <a class="project-item" href="vpn.html">
         <div class="p-icon">
           <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
         <h4>VPN</h4>
         <p>Service sécurisé</p>
-      </div>
-      <div class="project-item">
+      </a>
+      <a class="project-item" href="boutique-en-ligne.html">
         <div class="p-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
         </div>
         <h4>Boutique en ligne</h4>
         <p>Shop &amp; services</p>
-      </div>
-      <div class="project-item">
+      </a>
+      <a class="project-item" href="panels-smm.html">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 15s1.5-2 5-2 5 2 11 2V5c-6 0-7.5-2-11-2S4 5 4 5z"/><line x1="4" y1="22" x2="4" y2="15"/><path d="M8 22h8"/></svg>
+        </div>
+        <h4>SMM Panels</h4>
+        <p>Social &amp; visibilité</p>
+      </a>
+      <a class="project-item" href="hebergement-web.html">
         <div class="p-icon">
           <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
         </div>
-        <h4>Hébergement</h4>
+        <h4>Hébergement web</h4>
         <p>Performant &amp; fiable</p>
-      </div>
-      <div class="project-item">
+      </a>
+      <a class="project-item" href="unites-mobile-money.html">
         <div class="p-icon">
           <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <h4>Unités &amp; Mobile Money</h4>
         <p>Restez connectés</p>
-      </div>
+      </a>
+      <a class="project-item" href="application-vts.html">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 16H9m10 0h1a2 2 0 0 0 2-2v-3.5a2 2 0 0 0-.4-1.2L19 6a2 2 0 0 0-1.6-.8H6.6A2 2 0 0 0 5 6l-2.6 3.3A2 2 0 0 0 2 10.5V14a2 2 0 0 0 2 2h1"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg>
+        </div>
+        <h4>Application VTS</h4>
+        <p>Flotte &amp; suivi</p>
+      </a>
     </div>
   </div>
 </section>
@@ -993,19 +1097,19 @@
       </div>
       <div class="stats fade-up fade-up-delay-1">
         <div class="stat">
-          <div class="stat-number">6+</div>
+          <div class="stat-number" data-count-to="6" data-suffix="+">6+</div>
           <div class="stat-label">Domaines d'activité</div>
         </div>
         <div class="stat">
-          <div class="stat-number">100%</div>
+          <div class="stat-number" data-count-to="100" data-suffix="%">100%</div>
           <div class="stat-label">Engagement local</div>
         </div>
         <div class="stat">
-          <div class="stat-number">24/7</div>
+          <div class="stat-number" data-reveal-text="24/7">24/7</div>
           <div class="stat-label">Disponibilité</div>
         </div>
         <div class="stat">
-          <div class="stat-number" style="font-size:42px;">Clients</div>
+          <div class="stat-number stat-number--word" data-reveal-text="Clients">Clients</div>
           <div class="stat-label">Notre priorité</div>
         </div>
       </div>
@@ -1035,36 +1139,36 @@
             <span>•</span>
             <span>5 décembre 2025</span>
           </div>
-          <h3>Mobile Money et crypto en RDC: ce qu'il faut verifier avant une transaction</h3>
-          <p>Une checklist locale pour eviter les erreurs de numero, de reseau, d'adresse wallet, de taux et de preuve.</p>
+          <h3>Mobile Money et crypto en RDC: ce qu'il faut vérifier avant une transaction</h3>
+          <p>Une checklist locale pour éviter les erreurs de numéro, de réseau, d'adresse wallet, de taux et de preuve.</p>
           <span class="insight-link">Lire l'article</span>
         </div>
       </a>
 
       <a href="blog-erreurs-crypto-debutants-rdc.html" class="insight-card fade-up fade-up-delay-1">
-        <img src="assets/blog-1.jpg" alt="Smartphone utilise pour des paiements digitaux et crypto" class="insight-img" loading="lazy">
+        <img src="assets/blog-1.jpg" alt="Smartphone utilisé pour des paiements digitaux et crypto" class="insight-img" loading="lazy">
         <div class="insight-content">
           <div class="insight-meta">
             <span class="insight-category">Crypto &amp; Finance</span>
             <span>•</span>
             <span>24 novembre 2025</span>
           </div>
-          <h3>Les 7 erreurs les plus frequentes des debutants en cryptomonnaies</h3>
-          <p>Un guide clair pour commencer sans se faire pieger par les faux gains, les mauvais reseaux et les faux agents.</p>
+          <h3>Les 7 erreurs les plus fréquentes des débutants en cryptomonnaies</h3>
+          <p>Un guide clair pour commencer sans se faire piéger par les faux gains, les mauvais réseaux et les faux agents.</p>
           <span class="insight-link">Lire l'article</span>
         </div>
       </a>
 
       <a href="blog-arnaques-crypto-whatsapp-telegram.html" class="insight-card fade-up fade-up-delay-2">
-        <img src="assets/blog-featured.jpg" alt="Entrepreneur a Kinshasa verifiant une transaction sur son telephone" class="insight-img" loading="lazy">
+        <img src="assets/blog-featured.jpg" alt="Entrepreneur à Kinshasa vérifiant une transaction sur son téléphone" class="insight-img" loading="lazy">
         <div class="insight-content">
           <div class="insight-meta">
             <span class="insight-category">Crypto &amp; Finance</span>
             <span>•</span>
             <span>13 novembre 2025</span>
           </div>
-          <h3>Comment reconnaitre une fausse opportunite crypto sur WhatsApp ou Telegram</h3>
-          <p>Les signaux d'alerte a connaitre avant de croire aux promesses de rendement et aux groupes non verifies.</p>
+          <h3>Comment reconnaître une fausse opportunité crypto sur WhatsApp ou Telegram</h3>
+          <p>Les signaux d'alerte à connaître avant de croire aux promesses de rendement et aux groupes non vérifiés.</p>
           <span class="insight-link">Lire l'article</span>
         </div>
       </a>
@@ -1077,15 +1181,11 @@
 </section>
 
 <!-- FOOTER (footer-dark) -->
-<footer id="contact">
+<footer class="page-footer" id="contact">
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <div class="nav-logo" aria-label="SERGE BUSINESS">
-          <span>SERGE</span>
-          <span class="nav-logo-signal" aria-hidden="true"></span>
-          <span>BUSINESS</span>
-        </div>
+        <div class="nav-logo" aria-label="SERGE BUSINESS"><span>SERGE</span><span class="nav-logo-signal" aria-hidden="true"></span><span>BUSINESS</span></div>
         <p>Entreprise congolaise basée à Kinshasa. Nous connectons commerce, digital et mobile money pour un quotidien plus simple et plus efficace.</p>
         <div class="social-icons">
           <a href="https://wa.me/243812349329" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
@@ -1097,18 +1197,27 @@
       </div>
       <div class="footer-col">
         <h4>Liens rapides</h4>
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#projets">Projets</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="projets.html">Projets</a>
+        <a href="blog.html">Blog</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="crypto.html">Crypto & Finance</a>
-        <a href="automobile.html">Automobile & VTS</a>
-        <a href="digital.html">Marketing & Digital</a>
-        <a href="blog.html">Blog</a>
+        <a href="crypto.html">Crypto &amp; Finance</a>
+        <a href="automobile.html">Automobile &amp; VTS</a>
+        <a href="digital.html">Marketing &amp; Digital</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projets</h4>
+        <a href="vpn.html">VPN</a>
+        <a href="boutique-en-ligne.html">Boutique en ligne</a>
+        <a href="panels-smm.html">SMM Panels</a>
+        <a href="hebergement-web.html">Hébergement web</a>
+        <a href="unites-mobile-money.html">Unités &amp; Mobile Money</a>
+        <a href="application-vts.html">Application VTS</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -1144,6 +1253,88 @@
 <a href="https://wa.me/243812349329" target="_blank" rel="noopener" class="floating-wa" aria-label="Contactez-nous sur WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
+
+<script>
+  (() => {
+    const stats = document.querySelector('.stats');
+    const counters = document.querySelectorAll('[data-count-to]');
+    const textReveals = document.querySelectorAll('[data-reveal-text]');
+    if (!stats || (!counters.length && !textReveals.length)) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const setFinalValues = () => {
+      counters.forEach((counter) => {
+        counter.textContent = `${counter.dataset.countTo}${counter.dataset.suffix || ''}`;
+      });
+      textReveals.forEach((item) => {
+        item.textContent = item.dataset.revealText;
+        item.style.opacity = '';
+        item.style.transform = '';
+      });
+    };
+
+    if (!prefersReducedMotion) {
+      counters.forEach((counter) => {
+        counter.textContent = `0${counter.dataset.suffix || ''}`;
+      });
+
+      textReveals.forEach((item) => {
+        item.textContent = item.dataset.revealText;
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(8px)';
+        item.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+      });
+    }
+
+    const animateCounters = () => {
+      if (stats.dataset.animated === 'true') return;
+      stats.dataset.animated = 'true';
+
+      if (prefersReducedMotion) {
+        setFinalValues();
+        return;
+      }
+
+      counters.forEach((counter) => {
+        const target = Number(counter.dataset.countTo);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 900;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          counter.textContent = `${Math.round(target * eased)}${suffix}`;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+      });
+
+      textReveals.forEach((item, index) => {
+        window.setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, 150 + index * 90);
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      animateCounters();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        animateCounters();
+        observer.disconnect();
+      }
+    }, { threshold: 0.35 });
+
+    observer.observe(stats);
+  })();
+</script>
 
 </body>
 </html>

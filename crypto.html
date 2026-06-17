@@ -116,6 +116,7 @@
   .step-number { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--accent-green); margin-bottom: var(--lg); opacity: 0.5; }
   .step-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: var(--md); }
   .step-card p { font-size: 14px; color: var(--shade-40); line-height: 1.7; }
+  .step-card .btn { margin-top: var(--xl); }
 
   .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--xl); margin-top: var(--xxl); }
   .trust-item { display: flex; gap: var(--lg); align-items: flex-start; }
@@ -134,7 +135,7 @@
 
   footer { border-top: 1px solid var(--hairline-dark); padding: var(--huge) var(--xl) var(--xl); background: var(--canvas-night); }
   .footer-inner { max-width: 1440px; margin: 0 auto; }
-  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: var(--xxl); margin-bottom: var(--huge); }
+  .footer-grid { display: grid; grid-template-columns: 1.45fr 0.85fr 1fr 1.15fr 1.35fr; gap: var(--xxl); align-items: start; margin-bottom: var(--huge); }
   .footer-col h4 { font-family: var(--font-display); font-size: 14px; font-weight: 500; letter-spacing: 0.72px; margin-bottom: var(--xl); color: var(--on-primary); }
   .footer-col p { font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); line-height: 1.7; }
   .footer-col a { font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); line-height: 2; display: block; transition: color 0.3s; }
@@ -146,13 +147,14 @@
   .social-icons a:hover svg { stroke: var(--ink); }
   .social-icons svg { width: 16px; height: 16px; stroke: var(--on-primary); fill: none; stroke-width: 1.5; }
   .contact-item { display: flex; align-items: center; gap: var(--sm); margin-bottom: var(--md); font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--link-cool-2); }
-  .contact-item svg { width: 16px; height: 16px; stroke: var(--link-cool-3); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+  .contact-item svg { width: 16px; height: 16px; stroke: var(--link-cool-3); fill: none; stroke-width: 1.5; flex-shrink: 0; transition: stroke 0.3s, transform 0.3s; }
+  .contact-item:hover svg { stroke: var(--accent-green); transform: translateY(-1px); }
   .contact-item a { color: var(--link-cool-2); text-decoration: none; transition: color 0.3s; }
   .contact-item a:hover { color: var(--on-primary); }
   .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--xl); border-top: 1px solid var(--shade-30); flex-wrap: wrap; gap: var(--md); }
-  .footer-bottom p { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); letter-spacing: -0.13px; }
+  .footer-bottom p { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); letter-spacing: 0; }
   .footer-bottom-links { display: flex; gap: var(--xl); }
-  .footer-bottom-links a { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); transition: color 0.3s; letter-spacing: -0.13px; }
+  .footer-bottom-links a { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--shade-60); transition: color 0.3s; letter-spacing: 0; }
   .footer-bottom-links a:hover { color: var(--on-primary); }
 
   @media (max-width: 1024px) {
@@ -202,6 +204,7 @@
         <a href="digital.html">Marketing & Digital</a>
       </div>
     </div>
+    <a href="projets.html">Projets</a>
     <a href="blog.html">Blog</a>
     <a href="apropos.html">À propos</a>
     <a href="contact.html">Contact</a>
@@ -287,6 +290,7 @@
         <div class="step-number">03</div>
         <h3>Achetez en toute sécurité</h3>
         <p>Effectuez votre paiement via Mobile Money ou virement, et recevez vos cryptomonnaies instantanément.</p>
+        <a class="btn btn-outline-on-dark--subtle" href="unites-mobile-money.html">Voir Mobile Money</a>
       </div>
     </div>
   </div>
@@ -368,7 +372,7 @@
   <p><strong>Avertissement :</strong> Le trading de cryptomonnaies comporte des risques financiers importants, notamment une forte volatilité des prix. Les informations fournies sur ce site ne constituent pas un conseil financier. Investissez uniquement ce que vous pouvez vous permettre de perdre. SERGE BUSINESS décline toute responsabilité en cas de perte de capital.</p>
 </div>
 
-<footer>
+<footer class="page-footer" id="contact">
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
@@ -385,17 +389,26 @@
       <div class="footer-col">
         <h4>Liens rapides</h4>
         <a href="index.html">Accueil</a>
-        <a href="crypto.html">Crypto & Finance</a>
-        <a href="automobile.html">Automobile & VTS</a>
-        <a href="digital.html">Marketing & Digital</a>
+        <a href="index.html#services">Services</a>
+        <a href="projets.html">Projets</a>
         <a href="blog.html">Blog</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="crypto.html">Crypto & Finance</a>
-        <a href="automobile.html">Automobile & VTS</a>
-        <a href="digital.html">Marketing & Digital</a>
-        <a href="blog.html">Blog</a>
+        <a href="crypto.html">Crypto &amp; Finance</a>
+        <a href="automobile.html">Automobile &amp; VTS</a>
+        <a href="digital.html">Marketing &amp; Digital</a>
+      </div>
+      <div class="footer-col">
+        <h4>Projets</h4>
+        <a href="vpn.html">VPN</a>
+        <a href="boutique-en-ligne.html">Boutique en ligne</a>
+        <a href="panels-smm.html">SMM Panels</a>
+        <a href="hebergement-web.html">Hébergement web</a>
+        <a href="unites-mobile-money.html">Unités &amp; Mobile Money</a>
+        <a href="application-vts.html">Application VTS</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
